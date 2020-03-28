@@ -1,0 +1,61 @@
+---
+label: Global Site Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: select
+    name: palette
+    label: Palette
+    description: The palette of the theme.
+    default: blue
+    config:
+      source:
+        type: custom
+      options:
+        - blue
+        - green
+        - navy
+        - violet
+  - type: field_group
+    name: palettes
+    label: Palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: blue
+        label: Blue
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: green
+        label: Green
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: navy
+        label: Navy
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: violet
+        label: Violet
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
